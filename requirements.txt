@@ -1,8 +1,9 @@
+# Compatible with Hugging Face Spaces runtime (Streamlit SDK)
 streamlit
 pandas
 numpy
 yfinance
-scikit-learn
-xgboost
+scikit-learn==1.3.2
+xgboost==1.7.6
 matplotlib
-shap
+shap==0.44.1
