@@ -12,173 +12,98 @@ Can a calibrated machine‑learning model using selected technical indicators ge
 Methodology
 Data Collection
 Historical price data collected from:
-Target stock
-
-
-Market benchmark (S&P 500)
-
-
-Sector benchmark
-
-
-Peer company
+- Target stock
+- Market benchmark (S&P 500)
+- Sector benchmark
+- Peer company
 
 
 Feature Engineering
 Seven technical indicators capturing momentum, volatility, and trend:
-Relative Strength Index (RSI)
-
-
-Moving Average Convergence Divergence (MACD)
-
-
-Moving Average windows
-
-
-Bollinger Bands
-
-
-Rate of Change (ROC)
-
-
-Volume‑based signals
-
-
-Sector/peer relative performance factors
+- Relative Strength Index (RSI)
+- Moving Average Convergence Divergence (MACD)
+- Moving Average windows
+- Bollinger Bands
+- Rate of Change (ROC)
+- Volume‑based signals
+- Sector/peer relative performance factors
 
 
 Model Architecture
-Ensemble models (XGBoost or Random Forest)
-
-
-Automated decision‑threshold tuning
-
-
-Hyperparameter exploration
+- Ensemble models (XGBoost or Random Forest)
+- Automated decision‑threshold tuning
+- Hyperparameter exploration
 
 
 Evaluation
-Train/test split with unseen data
-
-
-Metrics: Accuracy, Precision, Recall, F1
-
-
-Back‑tested on familiar equities (e.g., NVDA, AMD, META, GOOG)
-
-
-Benchmark: S&P 500 index (SPY), sector ETF (XLK/SOXX)
+- Train/test split with unseen data
+- Metrics: Accuracy, Precision, Recall, F1
+- Back‑tested on familiar equities (e.g., NVDA, AMD, META, GOOG)
+- Benchmark: S&P 500 index (SPY), sector ETF (XLK/SOXX)
 
 
 Interpretability
-SHAP values for feature contribution
-
-
-Confidence probabilities
-
-
-Narrative rationale
+- SHAP values for feature contribution
+- Confidence probabilities
+- Narrative rationale
 
 
 Deployment
 Interactive Streamlit dashboard for results exploration.
 
 Results
-~70% accuracy in back‑testing, outperforming single‑indicator baselines
-
-
-Calibrated thresholds improved balance between false signals and missed opportunities
-
-
-Dashboard presents signal, rationale, and risk commentary
-
+- ~70% accuracy in back‑testing, outperforming single‑indicator baselines
+- Calibrated thresholds improved balance between false signals and missed opportunities
+- Dashboard presents signal, rationale, and risk commentary
 
 Exploratory research — not production trading.
 
 Limitations
-Limited data window
-
-
-Simplified sentiment pipeline
-
-
-No macroeconomic or fundamental inputs
-
-
-Past performance not indicative of future results
+- Limited data window
+- Simplified sentiment pipeline
+- No macroeconomic or fundamental inputs
+- Past performance not indicative of future results
 
 
 
 Ethical & Practical Notes
-Educational and experimental purposes only
-
-
-No financial advice or trading recommendation
-
-
-Focus on transparency and responsible AI experimentation
+- Educational and experimental purposes only
+- No financial advice or trading recommendation
+- Focus on transparency and responsible AI experimentation
 
 
 
 What I Learned
-End‑to‑end ML research workflow
-
-
-Back‑testing and model evaluation strategies
-
-
-Importance of interpretability and uncertainty estimation
-
-
-Streamlit deployment and reproducibility techniques
+- End‑to‑end ML research workflow
+- Back‑testing and model evaluation strategies
+- Importance of interpretability and uncertainty estimation
+- Streamlit deployment and reproducibility techniques
 
 
 
 Future Work
-Integrate OpenBB for expanded data sources and advanced indicators
-
-
-Implement dynamic sentiment feeds and refined NLP methods
-
-
-Add portfolio analytics and risk‑adjusted return evaluation
-
-
-Expand back‑testing universe and extend time windows
-
-
-Collaborate with open‑source communities for peer review
-
-
-Apply insights from academic behavioral‑finance research
+- Integrate OpenBB for expanded data sources and advanced indicators
+- Implement dynamic sentiment feeds and refined NLP methods
+- Add portfolio analytics and risk‑adjusted return evaluation
+- Expand back‑testing universe and extend time windows
+- Collaborate with open‑source communities for peer review
+- Apply insights from academic behavioral‑finance research
 
 
 
 References
-López de Prado, Advances in Financial Machine Learning
-
-
-Jegadeesh & Titman (1993), Returns to Buying Winners and Selling Losers
-
-
-Berkeley Haas, AI and Perception Biases in Investments
-
-
-Yahoo Finance & OpenBB documentation
+- López de Prado, Advances in Financial Machine Learning
+- Jegadeesh & Titman (1993), Returns to Buying Winners and Selling Losers
+- Berkeley Haas, AI and Perception Biases in Investments
+- Yahoo Finance & OpenBB documentation
 
 
 
 File Guide
-model.ipynb — Research, modeling, evaluation
-
-
-stock_signal.py — Streamlit dashboard
-
-
-requirements.txt — Dependencies
-
-
-README.md — Documentation
+- model.ipynb — Research, modeling, evaluation
+- stock_signal.py — Streamlit dashboard
+- requirements.txt — Dependencies
+- README.md — Documentation
 
 
 
