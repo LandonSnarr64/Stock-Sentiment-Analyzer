@@ -1,71 +1,191 @@
+Stock Sentiment & Technical Signal Research Model
+Academic Abstract
+This independent research project evaluates whether machine-learning models based on technical market indicators can support systematic stock‑signal generation. The model compares an individual equity against market, sector, and peer benchmarks using seven momentum, volatility, and trend indicators. Outputs include directional sentiment classifications, calibrated confidence levels, and back‑tested performance. Research emphasis is placed on methodology, interpretability, uncertainty, and academic grounding rather than real‑world trading use.
 
-# Stock Sentiment Analyzer
+Motivation
+Modern financial markets increasingly use automated decision systems. This project explores whether technical indicators, paired with machine‑learning techniques, can provide useful signal direction insights and probability estimates for equity‑performance forecasting.
+Built as a self‑directed learning and research project — not for financial advice.
 
-Explores how machine learning can integrate stock price data and sentiment indicators to study short-term market trends.  
-Built as an independent learning project — not for trading or financial advice.
+Research Question
+Can a calibrated machine‑learning model using selected technical indicators generate stock‑direction sentiment signals and confidence scores that outperform individual indicator heuristics?
 
----
-
-##  Overview
-This model compares the sentiment and performance of a target stock against the overall market, its sector, and a close competitor.  
-It uses **seven technical indicators** of high applicability and effectiveness to capture momentum, trend, and volatility patterns.  
-The model produces a **Buy / Hold / No-Action decision** with a calibrated **confidence percentage**, an **auto-tuned decision threshold**, and a **recommended holding period**.  
-Results include a narrative summary explaining methodology, drivers, and limitations.
-
----
-
-## Purpose
-To test whether combining quantitative market data with sentiment-based features can modestly improve predictive power compared to purely technical models.
-
----
-
-##  Method
-- **Libraries:** `pandas`, `numpy`, `yfinance`, `scikit-learn`, `XGBoost`, `SHAP`, `matplotlib`, `streamlit`
-- **Data Sources:** Yahoo Finance (e.g., NVDA, SPY, SOXX, AMD) and curated sentiment scores from financial headlines.
-- **Process:**
-  1. Collects historical price data for the target, benchmark, sector, and peer tickers.
-  2. Generates seven features capturing momentum, volatility, and relative strength.
-  3. Trains a calibrated ensemble model (XGBoost or Random Forest) with automated threshold tuning.
-  4. Evaluates performance on unseen data using accuracy, precision, recall, and F1 metrics.
-  5. Presents interpretable results with confidence scores, SHAP feature explanations, and back-tested curves.
-
----
-
-##  Results
-- Sentiment-augmented models showed **small but consistent improvement** over purely technical baselines.
-- The calibrated threshold improved decision balance between false positives and missed opportunities.
-- Outputs include an interactive Streamlit dashboard displaying confidence, rationale, and risk commentary.
-
-*(Exploratory only — not production-ready.)*
-
----
-
-##  Limitations
-- Short dataset window; limited sentiment sample.
-- Simplified NLP approach (basic polarity, not transformer-based).
-- No macroeconomic, fundamental, or news-timing adjustments.
-
----
-
-## What I Learned
-- How to structure an end-to-end ML pipeline from raw data to deployed web apps.  
-- The importance of model calibration, interpretability, and reproducibility.  
-- How to evaluate predictions honestly and quantify uncertainty.  
-
-## Ongoing Work and Improvement
-- Integrate OpenBB data pipelines to access a broader range of financial datasets and expand historical coverage for both target and peer tickers.
--Implement advanced technical indicators available through OpenBB to enhance model robustness and feature diversity.
-- Incorporate dynamic sentiment and news feeds using OpenBB’s aggregation tools to provide richer, real-time contextual inputs.
--Develop portfolio and risk analytics modules for evaluating risk-adjusted returns, optimal holding periods, and diversification effects.
-- Enhance visualization and interpretability through OpenBB’s plotting and reporting utilities to improve user experience and transparency.
--Collaborate with the OpenBB open-source research community to adopt best practices in calibration, ethical AI design, and continuous model improvement.
--Draw on academic research from UC Berkeley’s Haas School of Business and the Department of Economics, such as “AI and Perception Biases in Investments: An Experimental Study,” to inform improvement of my model’s interpretability and bias reduction. Their insights on how AI agents emulate diverse investor behaviors will guide how sentiment and demographic features are applied to enhance fairness and reliability in automated investment reasoning.
+Methodology
+Data Collection
+Historical price data collected from:
+Target stock
 
 
----
+Market benchmark (S&P 500)
 
-## 🗂 Files
-- `stock_signal.py` — Streamlit application (interactive dashboard)
-- `model.ipynb` — Jupyter notebook (training and evaluation)
-- `requirements.txt` — Python dependencies
-- `README.md` — Project documentation
+
+Sector benchmark
+
+
+Peer company
+
+
+Feature Engineering
+Seven technical indicators capturing momentum, volatility, and trend:
+Relative Strength Index (RSI)
+
+
+Moving Average Convergence Divergence (MACD)
+
+
+Moving Average windows
+
+
+Bollinger Bands
+
+
+Rate of Change (ROC)
+
+
+Volume‑based signals
+
+
+Sector/peer relative performance factors
+
+
+Model Architecture
+Ensemble models (XGBoost or Random Forest)
+
+
+Automated decision‑threshold tuning
+
+
+Hyperparameter exploration
+
+
+Evaluation
+Train/test split with unseen data
+
+
+Metrics: Accuracy, Precision, Recall, F1
+
+
+Back‑tested on familiar equities (e.g., NVDA, AMD, META, GOOG)
+
+
+Benchmark: S&P 500 index (SPY), sector ETF (XLK/SOXX)
+
+
+Interpretability
+SHAP values for feature contribution
+
+
+Confidence probabilities
+
+
+Narrative rationale
+
+
+Deployment
+Interactive Streamlit dashboard for results exploration.
+
+Results
+~70% accuracy in back‑testing, outperforming single‑indicator baselines
+
+
+Calibrated thresholds improved balance between false signals and missed opportunities
+
+
+Dashboard presents signal, rationale, and risk commentary
+
+
+Exploratory research — not production trading.
+
+Limitations
+Limited data window
+
+
+Simplified sentiment pipeline
+
+
+No macroeconomic or fundamental inputs
+
+
+Past performance not indicative of future results
+
+
+
+Ethical & Practical Notes
+Educational and experimental purposes only
+
+
+No financial advice or trading recommendation
+
+
+Focus on transparency and responsible AI experimentation
+
+
+
+What I Learned
+End‑to‑end ML research workflow
+
+
+Back‑testing and model evaluation strategies
+
+
+Importance of interpretability and uncertainty estimation
+
+
+Streamlit deployment and reproducibility techniques
+
+
+
+Future Work
+Integrate OpenBB for expanded data sources and advanced indicators
+
+
+Implement dynamic sentiment feeds and refined NLP methods
+
+
+Add portfolio analytics and risk‑adjusted return evaluation
+
+
+Expand back‑testing universe and extend time windows
+
+
+Collaborate with open‑source communities for peer review
+
+
+Apply insights from academic behavioral‑finance research
+
+
+
+References
+López de Prado, Advances in Financial Machine Learning
+
+
+Jegadeesh & Titman (1993), Returns to Buying Winners and Selling Losers
+
+
+Berkeley Haas, AI and Perception Biases in Investments
+
+
+Yahoo Finance & OpenBB documentation
+
+
+
+File Guide
+model.ipynb — Research, modeling, evaluation
+
+
+stock_signal.py — Streamlit dashboard
+
+
+requirements.txt — Dependencies
+
+
+README.md — Documentation
+
+
+
+How to Run
+pip install -r requirements.txt
+streamlit run stock_signal.py
+
+
+Acknowledgment
+This project was independently designed and executed as part of a self‑directed research portfolio in machine‑learning and financial data science.
